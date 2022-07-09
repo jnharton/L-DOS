@@ -68,13 +68,13 @@ def winerr():
     sound.PlaySound(filename)
 
 def not_installed():
-    invalid_beep()
+    sound.invalid_beep()
     print("This software is not installed. Install it through fshop.")
     graphics.pg("""This software is not installed. Install it through fshop.""", 5, 45, "bold")
 
 
 def invalid():
-    invalid_beep()
+    sound.invalid_beep()
     print("What you have inputted is invalid.")
     graphics.pg("""What you have inputted is invalid.""", 5, 45, "bold")
 
@@ -93,7 +93,7 @@ def boot():
     global beep
     global command
     
-    f = open("theme.ldos", 'r')
+    f = open("aero.ldos", 'r')
     s = f.read()
     bg='#' + s[0:6]
     text='#' + s[7:13]
@@ -165,7 +165,7 @@ def shell():
         turtle.write("Last Command: " + lCom, align = "center", font = ("Arial", 10, "normal"))
         
         command = input(drive)
-        confirm_beep()
+        sound.confirm_beep()
         
         if command == "break":
             break
@@ -231,7 +231,7 @@ def shell():
                 Thank you for downloading L-DOS.
                 ----------
                 NOTE: Scroll up to view all of help.""")
-                error_beep()
+                sound.error_beep()
             if command == "p-lang" or command == "plang":
                 update()
             if command == "doc" or command == "docedit":
@@ -256,7 +256,7 @@ def shell():
                 
                 print("Reboot initalized...")
                 print("Reboot cancelled.")
-                error_beep()
+                sound.error_beep()
             if command == "version":
                 print("You are running L-DOS version " + ver + ".")
             if command == "etest":
@@ -295,50 +295,50 @@ def shell():
                 
                 choice1 = input("Insert choice: ")
                 
-                confirm_beep()
+                sound.confirm_beep()
                 
                 if choice1 == "1":
                     print("Install math?")
                     if input() == "y" or "Y":
-                        confirm_beep()
+                        sound.confirm_beep()
                         print("Installing math function...")
                         print("Math has been installed successfully.")
                         math = 1
                 elif choice1 == "2":
                     print ("Install lock?")
                     if input() == "y" or "Y":
-                        confirm_beep()
+                        sound.confirm_beep()
                         print("Installing lock...")
                         print("Lock has been installed successfully.")
                         lock = 1
                 elif choice1 == "3":
                     print("Install error tester?")
                     if input() == "y" or "Y":
-                        confirm_beep()
+                        sound.confirm_beep()
                         print("Installing error test...")
                         print("Error tester has been installed successfully.")
                         et = 1
                 elif choice1 == "4":
                     print("Install beep?")
                     if input() == "y" or "Y":
-                        confirm_beep()
+                        sound.confirm_beep()
                         print("Installing beep...")
                         beep = 1
                         print("Beep has been installed successfully.")
                 elif choice1 == "5":
                     print("Install Bonus GUI?")
                     if input() == "y" or "Y":
-                        confirm_beep()
+                        sound.confirm_beep()
                         print("Installing bonus GUI...")
-                        error_beep()
+                        sound.error_beep()
                         print("First attempt failed.")
-                        error_beep()
+                        sound.error_beep()
                         print("Second attempt failed. Trying final time...")
-                        error_beep()
+                        sound.error_beep()
                         print("Third attempt failed. Cannot download bonusGui.exe.")
                 else:
                     invalid()
-                    confirm_beep()
+                    sound.confirm_beep()
             if command == "pgui":
                 graphics.pgui(input("What to print to GUI: "), "Arial")
             if command == "graphic":
@@ -403,22 +403,22 @@ def shell():
             if command == "credits":
                 print("Lim Industries L-DOS")
                 graphics.pg("Lim Industries L-DOS", 1, 12, "bold")
-                confirm_beep()
+                sound.confirm_beep()
                 print("Created by Lim95")
                 graphics.pg("Created by Lim95", 1, 12, "bold")
-                confirm_beep()
+                sound.confirm_beep()
                 print("Programmed in Python 3.0")
                 graphics.pg("Programmed in Python 3.0", 1, 12, "bold")
-                confirm_beep()
+                sound.confirm_beep()
                 print("Music from Friday Night Funkin'")
                 graphics.pg("Music from Friday Night Funkin'", 1, 12, "bold")
-                confirm_beep()
+                sound.confirm_beep()
                 print("GUI Boot Sound from Windows 95")
                 graphics.pg("GUI Boot Sound from Windows 95", 1, 12, "bold")
-                confirm_beep()
+                sound.confirm_beep()
                 print("Thanks for using L-DOS!")
                 graphics.pg("Thanks for using L-DOS!", 5, 12, "bold")
-                error_beep()
+                sound.error_beep()
             if command == "lib":
                 print("""
                 L-DOS v0.1.0 uses the following Pythin libraries:
